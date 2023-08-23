@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+
+  app.front:
+    build:
+      context: ../
+      dockerfile: ./Dockerfile
+    hostname: &hostname app
+    container_name: *hostname
+    image: &image ${IMAGE:-app}:latest
+    volumes:
+      - ../service:/var/lib/app
+      - ./cache:/var/lib/app-cache
+    ports:
+      - "3000:3000"
+      - "8000:8000"
+    env_file:
+      - ./env_files/app.env
+    mem_limit: 700m
+    cpus: 0.45
+    networks:
+      app_net:
+
+
+networks:
+  app_net:
