@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-Created on ter mar 21 21:39:31 2023
-@author ccavalcante
-"""
 import reflex as rx
 
 from app.views.utils.view_interface import ViewInterface

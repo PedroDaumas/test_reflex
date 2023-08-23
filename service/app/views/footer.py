@@ -2,10 +2,6 @@
 # -*- coding: utf-8 -*-
 # pylint: skip-file
 
-"""
-Created on ter mar 21 21:39:31 2023
-@author ccavalcante
-"""
 import json
 
 import reflex as rx

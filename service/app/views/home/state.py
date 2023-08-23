@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-Created on qua jul 26 21:07:02 2023
-@author ccavalcante
-"""
 import reflex as rx
 
 from typing import List, Dict
@@ -80,7 +76,6 @@ class HomeState(MainState):
                 "c": {"data": "not_enough_data", "color": "gray"},
                 "d": {"data": "not_enough_data", "color": "gray"},
                 "e": {"data": "not_enough_data", "color": "gray"},
-                "pdup": False,
             },
             346: {
                 "user_id": {"data": 346, "color": None},
@@ -89,7 +84,6 @@ class HomeState(MainState):
                 "c": {"data": "not_enough_data", "color": "gray"},
                 "d": {"data": "not_enough_data", "color": "gray"},
                 "e": {"data": "low", "color": "green"},
-                "pdup": False,
             },
             568: {
                 "user_id": {"data": 568, "color": None},
@@ -98,7 +92,6 @@ class HomeState(MainState):
                 "c": {"data": "not_enough_data", "color": "gray"},
                 "d": {"data": "not_enough_data", "color": "gray"},
                 "e": {"data": "not_enough_data", "color": "gray"},
-                "pdup": False,
             },
             784: {
                 "user_id": {"data": 784, "color": None},
@@ -107,7 +100,6 @@ class HomeState(MainState):
                 "c": {"data": "not_enough_data", "color": "gray"},
                 "d": {"data": "not_enough_data", "color": "gray"},
                 "e": {"data": "low", "color": "green"},
-                "pdup": False,
             },
             910: {
                 "user_id": {"data": 910, "color": None},
@@ -116,7 +108,6 @@ class HomeState(MainState):
                 "c": {"data": "not_enough_data", "color": "gray"},
                 "d": {"data": "not_enough_data", "color": "gray"},
                 "e": {"data": "low", "color": "green"},
-                "pdup": False,
             },
             123: {
                 "user_id": {"data": 123, "color": None},
@@ -125,7 +116,6 @@ class HomeState(MainState):
                 "c": {"data": "not_enough_data", "color": "gray"},
                 "d": {"data": "not_enough_data", "color": "gray"},
                 "e": {"data": "low", "color": "green"},
-                "pdup": False,
             },
             456: {
                 "user_id": {"data": 456, "color": None},
@@ -134,7 +124,6 @@ class HomeState(MainState):
                 "c": {"data": "not_enough_data", "color": "gray"},
                 "d": {"data": "not_enough_data", "color": "gray"},
                 "e": {"data": "low", "color": "green"},
-                "pdup": False,
             },
             789: {
                 "user_id": {"data": 789, "color": None},
@@ -143,7 +132,6 @@ class HomeState(MainState):
                 "c": {"data": "not_enough_data", "color": "gray"},
                 "d": {"data": "not_enough_data", "color": "gray"},
                 "e": {"data": "high", "color": "red"},
-                "pdup": False,
             },
             154: {
                 "user_id": {"data": 154, "color": None},
@@ -152,7 +140,6 @@ class HomeState(MainState):
                 "c": {"data": "not_enough_data", "color": "gray"},
                 "d": {"data": "not_enough_data", "color": "gray"},
                 "e": {"data": "medium", "color": "#f3d565"},
-                "pdup": False,
             },
             853: {
                 "user_id": {"data": 853, "color": None},
@@ -161,7 +148,6 @@ class HomeState(MainState):
                 "c": {"data": "not_enough_data", "color": "gray"},
                 "d": {"data": "not_enough_data", "color": "gray"},
                 "e": {"data": "medium", "color": "#f3d565"},
-                "pdup": False,
             },
         }
 

@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-Created on qua jul 26 21:06:59 2023
-@author ccavalcante
-"""
 import reflex as rx
 
 from typing import List
