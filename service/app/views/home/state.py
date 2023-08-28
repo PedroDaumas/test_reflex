@@ -56,7 +56,7 @@ class HomeState(MainState):
         """
         self._mapped_users = {}
 
-    async def update_users(self):
+    async def update_users(self, limit: int = 10):
         """
         Update the users list
         """
@@ -67,8 +67,7 @@ class HomeState(MainState):
         yield
 
         self.count = 10
-
-        self._mapped_users = {
+        data = {
             121: {
                 "user_id": {"data": 121, "color": None},
                 "a": {"data": "not_enough_data", "color": "gray"},
@@ -150,5 +149,7 @@ class HomeState(MainState):
                 "e": {"data": "medium", "color": "#f3d565"},
             },
         }
+
+        self._mapped_users = {k: data[k] for k in list(data)[:int(limit)]}
 
         yield

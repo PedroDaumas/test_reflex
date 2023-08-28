@@ -10,7 +10,8 @@ from app.views.navbar import NavbarView
 from app.views.footer import FooterView
 
 from app.views.home.state import HomeState
-
+from app.views.home.states.filter import FilterState
+from app.views.home.states.export import ExportState
 
 class HomePage(ViewInterface):
     """List users"""
@@ -38,6 +39,20 @@ class HomePage(ViewInterface):
             width="100%",
         )
 
+    def make_export_button(
+        self, label_text, bg_color, on_click_event, size="sm", tag="add", is_disabled=False
+    ):
+        """
+        Makes a new reflex button
+        """
+        # pylint: disable=too-many-arguments
+
+        label = rx.hstack(rx.text(label_text, as_="b"), rx.icon(tag=tag))
+
+        return rx.button(
+            label, size=size, bg=bg_color, on_click=on_click_event, is_disabled=is_disabled
+        )
+    
     def make_heading_element(self, data, color="black", bg_color=None):
         """
         Returns the formatted heading
@@ -110,7 +125,20 @@ class HomePage(ViewInterface):
 
         user_count = rx.hstack(rx.text("Users found:", as_="b"), rx.text(HomeState.count, as_="b"))
 
-        return rx.hstack(user_count, rx.spacer(), width="100%")
+        limit_select = rx.select(
+            [1, 3, 10],
+            value=FilterState.current_limit,
+            on_change=FilterState.set_limit,
+        )
+
+        export_button = self.make_export_button(
+            "Export",
+            bg_color="orange",
+            on_click_event=ExportState.download,
+            tag="download",
+        )
+
+        return rx.hstack(user_count, rx.spacer(), limit_select, export_button, width="100%")
 
     def build(self):
         """Build the view"""
