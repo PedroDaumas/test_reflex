@@ -13,10 +13,6 @@ VOLUME $CACHE_PATH
 
 WORKDIR $WORKSPACE
 
-# this is needed to run reflex
-RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash -
-RUN apt update -y && apt install nodejs -y
-
 COPY ./service/requirements.txt ./
 
 RUN pip install -r requirements.txt 
