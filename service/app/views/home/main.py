@@ -40,7 +40,7 @@ class HomePage(ViewInterface):
         )
 
     def make_export_button(
-        self, label_text, bg_color, on_click_event, size="sm", tag="add", is_disabled=False
+        self, label_text, bg_color, size="sm", tag="add", is_disabled=False
     ):
         """
         Makes a new reflex button
@@ -49,8 +49,12 @@ class HomePage(ViewInterface):
 
         label = rx.hstack(rx.text(label_text, as_="b"), rx.icon(tag=tag))
 
-        return rx.button(
-            label, size=size, bg=bg_color, on_click=on_click_event, is_disabled=is_disabled
+        return rx.el.a(
+            rx.button(
+                label, size=size, bg=bg_color, is_disabled=is_disabled
+            ),
+            href="http://localhost:8000/export",
+            target="_blank",
         )
     
     def make_heading_element(self, data, color="black", bg_color=None):
@@ -134,7 +138,6 @@ class HomePage(ViewInterface):
         export_button = self.make_export_button(
             "Export",
             bg_color="orange",
-            on_click_event=ExportState.download,
             tag="download",
         )
 
