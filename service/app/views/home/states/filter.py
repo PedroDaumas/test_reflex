@@ -17,6 +17,8 @@ class FilterState(HomeState):
 
     limit: int = 10
 
+    user_filter = {}
+
     @rx.var
     def current_limit(self) -> str:
         """
@@ -30,4 +32,4 @@ class FilterState(HomeState):
         """
         self.limit = limit
 
-        return self.update_users(limit)
+        return self.update_users(self.limit, self.user_filter)

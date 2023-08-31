@@ -24,8 +24,6 @@ class HomeState(MainState):
     count: int = 0
     show: bool = False
 
-    user_filter: dict = {}
-
     _columns = [
         ["user_id", empty],
         ["a", "gray"],
@@ -56,10 +54,13 @@ class HomeState(MainState):
         """
         self._mapped_users = {}
 
-    async def update_users(self, limit: int = 10):
+    async def update_users(self, limit: int = 10, filters: dict = {}):
         """
         Update the users list
         """
+
+        print(type(limit))  # THIS IS THE BUG
+        print(type(filters))  # THIS IS THE BUG
 
         if self._mapped_users != {}:
             self.clean_users()
@@ -150,6 +151,6 @@ class HomeState(MainState):
             },
         }
 
-        self._mapped_users = {k: data[k] for k in list(data)[:int(limit)]}
+        self._mapped_users = {k: data[k] for k in list(data)[: int(limit)]}
 
         yield
